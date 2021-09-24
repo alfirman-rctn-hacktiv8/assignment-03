@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export const Github = () => {
   return (
     <a
-      href="https://github.com/ezza022"
+      href="https://github.com/ezza022/rate-currency"
       target="_blank"
       rel="noreferrer"
       className="h-14 w-14 flex items-center justify-center"
