@@ -9,7 +9,7 @@ const Data = () => {
   useEffect(() => {
     const fetchData = () => {
       fetch(
-        "http://api.exchangeratesapi.io/latest?access_key=1e529c233f13fc53c4674019dfc15379"
+        "https://api.exchangeratesapi.io/latest?access_key=1e529c233f13fc53c4674019dfc15379"
       )
         .then((res) => res.json())
         .then((result) => setRates(result.rates))
@@ -31,7 +31,7 @@ const Data = () => {
   };
 
   for (const key in rates) {
-    if (displayedCurrencies.includes(key)) {
+    if (rates.hasOwnProperty(key) && displayedCurrencies.includes(key)) {
       children.push(
         <tr
           key={displayedCurrencies.indexOf(key)}
@@ -64,7 +64,7 @@ const Data = () => {
       );
     }
   }
-  return [<div>heyah</div>,<div>sadasasd</div>];
+  return children;
 };
 
 export default Data;
