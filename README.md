@@ -1,6 +1,6 @@
 # Assignment 3
 
-- Live demo : [https://portfolio-online-reactjs.herokuapp.com/](https://portfolio-online-reactjs.herokuapp.com/)
+- Live demo : [https://rate-currency.vercel.app/](https://rate-currency.vercel.app/) *API not working on deployment
 - Nama : Alfirman Ejha Pahlepi
 - Kode peserta : RCTN-KS02-001
 - Program : Studi Independen - Kampus Merdeka
