@@ -31,7 +31,7 @@ const Data = () => {
   };
 
   for (const key in rates) {
-    if (rates.hasOwnProperty(key) && displayedCurrencies.includes(key)) {
+    if (displayedCurrencies.includes(key)) {
       children.push(
         <tr
           key={displayedCurrencies.indexOf(key)}
