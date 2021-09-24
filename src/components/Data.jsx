@@ -64,7 +64,7 @@ const Data = () => {
       );
     }
   }
-  return <div>asdasda</div>;
+  return [<div>heyah</div>,<div>sadasasd</div>];
 };
 
 export default Data;
