@@ -9,7 +9,7 @@ const Data = () => {
   useEffect(() => {
     const fetchData = () => {
       fetch(
-        "https://api.exchangeratesapi.io/latest?access_key=1e529c233f13fc53c4674019dfc15379"
+        "http://api.exchangeratesapi.io/latest?access_key=1e529c233f13fc53c4674019dfc15379"
       )
         .then((res) => res.json())
         .then((result) => setRates(result.rates))
