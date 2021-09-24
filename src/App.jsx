@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import { Github, Theme } from "./components/Icon";
 
 function App() {
-  const [isDark, setDark] = useState(true);
+  const [isDark, setDark] = useState(false);
   const transitionTheme = {
     transition: "all .5s ease",
     WebkitTransition: "all .5s ease",
