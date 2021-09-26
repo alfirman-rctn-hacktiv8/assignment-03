@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Data from "./components/Data";
 import Footer from "./components/Footer";
 import { Github, Theme } from "./components/Icon";
 
 function App() {
-  const [isDark, setDark] = useState(false);
   const transitionTheme = {
     transition: "all .5s ease",
     WebkitTransition: "all .5s ease",
@@ -16,7 +15,7 @@ function App() {
       className="h-screen w-screen flex flex-col justify-center items-center relative dark:bg-gray-900 bg-gray-50"
     >
       <header className="absolute top-0 right-0 flex p-1">
-        <Theme isDark={isDark} setDark={setDark} />
+        <Theme />
         <Github />
       </header>
       <table className="w-11/12 md:w-3/4 lg:w-1/2 block text-center bg-white border dark:border-none text-sm sm:text-base">
