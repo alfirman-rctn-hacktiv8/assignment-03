@@ -4,24 +4,25 @@ import data from "../../data.json";
 const ToggleAPI = ({ setRates }) => {
   const [isCheck, setCheck] = useState(false);
 
-  const fetchData = () => {
+  const fetchAPI = () => {
     fetch(
       "http://api.exchangeratesapi.io/latest?access_key=1e529c233f13fc53c4674019dfc15379"
     )
       .then((res) => res.json())
-      .then((result) => setRates(result.rates))
-      .catch((e) => console.log("error", e));
+      .then((result) => {
+        setRates(result.rates);
+        setCheck(true);
+      })
+      .catch((e) => alert(e));
   };
 
-  const toggleAPI = () => {
-    if (!isCheck) {
-      fetchData();
-      setCheck(true);
-    } else {
-      setRates(data);
-      setCheck(false);
-    }
+  const setStaticData = () => {
+    setRates(data);
+    setCheck(false);
   };
+
+  const toggleAPI = () => (!isCheck ? fetchAPI() : setStaticData());
+
   return (
     <div className="mt-1">
       <div className="relative inline-block w-10 mr-2 align-middle select-none transition ease-in">
