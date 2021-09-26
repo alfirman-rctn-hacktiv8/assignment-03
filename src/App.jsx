@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Data from "./components/Data";
 import Footer from "./components/Footer";
 import { Github, Theme } from "./components/Icon";
+import ToggleAPI from "./components/ToggleAPI";
+import data from "../data.json";
 
 function App() {
+  const [rates, setRates] = useState(data);
+
   const transitionTheme = {
     transition: "all .5s ease",
     WebkitTransition: "all .5s ease",
     MozTransition: "all .5s ease",
   };
+  
   return (
     <div
       style={transitionTheme}
@@ -30,22 +35,25 @@ function App() {
             </tr>
           </thead>
           <tbody className="block font-semibold text-gray-800">
-            <Data />
+            <Data rates={rates} />
           </tbody>
         </table>
-        <p className="text-sm mt-6 text-gray-500 dark:text-gray-300">
-          * base currency is EUR
-          <br />* As for the API,&nbsp;
-          <a
-            className="hover:underline"
-            href="https://exchangeratesapi.io/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            https://exchangeratesapi.io/
-          </a>
-          &nbsp;is used.
-        </p>
+        <div className="text-sm mt-6 text-gray-500 dark:text-gray-300">
+          <p>
+            * base currency is EUR
+            <br />* As for the API,&nbsp;
+            <a
+              className="hover:underline"
+              href="https://exchangeratesapi.io/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              https://exchangeratesapi.io/
+            </a>
+            &nbsp;is used.
+          </p>
+          <ToggleAPI setRates={setRates} />
+        </div>
       </main>
       <Footer />
     </div>

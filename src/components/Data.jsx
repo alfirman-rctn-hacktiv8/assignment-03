@@ -1,22 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const Data = () => {
-  const [rates, setRates] = useState({});
-
+const Data = ({ rates }) => {
+  
   const children = [];
   const displayedCurrencies = ["CAD", "IDR", "JPY", "CHF", "EUR", "USD"];
-
-  useEffect(() => {
-    const fetchData = () => {
-      fetch(
-        "http://api.exchangeratesapi.io/latest?access_key=1e529c233f13fc53c4674019dfc15379"
-      )
-        .then((res) => res.json())
-        .then((result) => setRates(result.rates))
-        .catch((e) => console.log("error", e));
-    };
-    fetchData();
-  }, []);
 
   const prettyCurrency = (crr, action) => {
     if (action === 0) crr = (crr * 102) / 100;
