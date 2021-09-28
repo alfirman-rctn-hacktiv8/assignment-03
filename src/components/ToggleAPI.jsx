@@ -42,7 +42,10 @@ const ToggleAPI = ({ setRates }) => {
           } block overflow-hidden h-6 rounded-full cursor-pointer`}
         ></label>
       </div>
-      <label htmlFor="toggle">fetch API</label>
+      <label htmlFor="toggle">
+        <span className={!isCheck && "text-green-500"}>Static Data</span> /{" "}
+        <span className={isCheck && "text-green-500"}>API data</span>
+      </label>
     </div>
   );
 };

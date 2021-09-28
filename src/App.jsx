@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Data from "./components/Data";
 import Footer from "./components/Footer";
 import { Github, Theme } from "./components/Icon";
@@ -13,17 +13,17 @@ function App() {
     WebkitTransition: "all .5s ease",
     MozTransition: "all .5s ease",
   };
-  
+
   return (
     <div
       style={transitionTheme}
-      className="h-screen w-screen dark:bg-gray-900 bg-gray-50 relative"
+      className="min-h-screen min-w-screen dark:bg-gray-900 bg-gray-50 relative flex flex-col justify-between"
     >
-      <header className="absolute top-0 right-0 flex p-1">
+      <header className="flex justify-end p-1">
         <Theme />
         <Github />
       </header>
-      <main className="w-full h-full flex flex-col justify-center items-center">
+      <main className="flex flex-col justify-center items-center">
         <table className="w-11/12 md:w-3/4 lg:w-1/2 block text-center bg-white border dark:border-none text-sm sm:text-base">
           <thead className="block bg-gray-800 text-white py-2">
             <tr className="flex justify-evenly">

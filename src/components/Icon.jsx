@@ -58,7 +58,7 @@ const Sun = () => {
 };
 
 export const Theme = () => {
-  const [isDark, setDark] = useState(false);
+  const [isDark, setDark] = useState(true);
   const togleTheme = () => {
     const body = document.querySelector("body");
     if (isDark) {
