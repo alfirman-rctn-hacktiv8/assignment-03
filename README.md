@@ -24,5 +24,5 @@ for installations all dependencies.
 ## Running
 For Running :
 ```
-yarn start
+yarn dev
 ```

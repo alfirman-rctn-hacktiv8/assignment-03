@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import Data from "./components/Data";
-import Footer from "./components/Footer";
+import data from "../data.json";
 import { Github, Theme } from "./components/Icon";
 import ToggleAPI from "./components/ToggleAPI";
-import data from "../data.json";
+import Footer from "./components/Footer";
+import Loading from "./components/Loading";
+import Data from "./components/Data";
 
 function App() {
   const [rates, setRates] = useState(data);
+  const [isLoading, setLoading] = useState(false);
 
   const transitionTheme = {
     transition: "all .5s ease",
@@ -23,7 +25,7 @@ function App() {
         <Theme />
         <Github />
       </header>
-      <main className="flex flex-col justify-center items-center">
+      <main className="flex flex-col justify-center items-center my-14">
         <table className="w-11/12 md:w-3/4 lg:w-1/2 block text-center bg-white border dark:border-none text-sm sm:text-base">
           <thead className="block bg-gray-800 text-white py-2">
             <tr className="flex justify-evenly">
@@ -52,9 +54,10 @@ function App() {
             </a>
             &nbsp;is used.
           </p>
-          <ToggleAPI setRates={setRates} />
+          <ToggleAPI setRates={setRates} setLoading={setLoading} />
         </div>
       </main>
+      <Loading isLoading={isLoading} />
       <Footer />
     </div>
   );
