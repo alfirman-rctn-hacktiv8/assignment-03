@@ -45,8 +45,25 @@ const ToggleAPI = ({ setRates, setLoading }) => {
         ></label>
       </div>
       <label htmlFor="toggle">
-        <span className={!isCheck ? "text-green-500":"text-gray-500"}>Static Data</span> /{" "}
-        <span className={isCheck ? "text-green-500":"text-gray-500"}>API data</span>
+        <span
+          className={
+            !isCheck
+              ? "text-green-500 dark:text-green-300"
+              : "text-gray-300 dark:text-gray-600"
+          }
+        >
+          Static Data
+        </span>{" "}
+        /{" "}
+        <span
+          className={
+            isCheck
+              ? "text-green-500 dark:text-green-300"
+              : "text-gray-300 dark:text-gray-600"
+          }
+        >
+          API data
+        </span>
       </label>
     </div>
   );

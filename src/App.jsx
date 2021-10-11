@@ -5,10 +5,14 @@ import ToggleAPI from "./components/ToggleAPI";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
 import Data from "./components/Data";
+import Description from "./components/Description";
 
 function App() {
   const [rates, setRates] = useState(data);
   const [isLoading, setLoading] = useState(false);
+  const [activeCurrency, setActiveCurrency] = useState("EUR");
+
+  const currencies = ["CAD", "IDR", "JPY", "CHF", "EUR", "USD"];
 
   const transitionTheme = {
     transition: "all .5s ease",
@@ -37,23 +41,19 @@ function App() {
             </tr>
           </thead>
           <tbody className="block font-semibold text-gray-800">
-            <Data rates={rates} />
+            <Data
+              rates={rates}
+              activeCurrency={activeCurrency}
+              currencies={currencies}
+            />
           </tbody>
         </table>
         <div className="text-sm mt-6 text-gray-500 dark:text-gray-300">
-          <p>
-            * base currency is EUR
-            <br />* As for the API,&nbsp;
-            <a
-              className="hover:underline"
-              href="https://exchangeratesapi.io/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              https://exchangeratesapi.io/
-            </a>
-            &nbsp;is used.
-          </p>
+          <Description
+            setActiveCurrency={setActiveCurrency}
+            activeCurrency={activeCurrency}
+            currencies={currencies}
+          />
           <ToggleAPI setRates={setRates} setLoading={setLoading} />
         </div>
       </main>
